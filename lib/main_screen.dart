@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluter_agrimarket/model/product.dart';
+import 'package:fluter_agrimarket/detail_screen.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -9,7 +10,6 @@ class MainScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        // title: const Text('Main Screen'),
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
@@ -35,11 +35,11 @@ class BodyMobile extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        children: <Widget>[
           Container(
             height: size.height * 0.2,
             child: Stack(
-              children: [
+              children: <Widget>[
                 Container(
                   padding: const EdgeInsets.only(
                     left: defaultSpacing,
@@ -67,7 +67,7 @@ class BodyMobile extends StatelessWidget {
                       const Spacer(),
                       // Image.asset("assets/images/user.png"),
                       ClipRRect(
-                        borderRadius: BorderRadius.circular(28),
+                        borderRadius: BorderRadius.circular(48),
                         child: Image.asset("assets/images/user.png"),
                       )
                     ],
@@ -148,7 +148,9 @@ class BodyMobile extends StatelessWidget {
               children: productList.map((product) {
                 return InkWell(
                   onTap: () {
-                    
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return DetailScreen(product: product);
+                    }));
                   },
                   child: Container(
                     margin: const EdgeInsets.only(
@@ -190,7 +192,7 @@ class BodyMobile extends StatelessWidget {
                             children: <Widget>[
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
+                                children: <Widget>[
                                   Text(
                                     product.name,
                                     style: const TextStyle(

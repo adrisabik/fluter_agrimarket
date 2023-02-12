@@ -32,7 +32,7 @@ var productList = [
       'Nicknamed the swiss cheese plant, the Monstera deliciosa is famous for its quirky natural leaf holes. These holes are theorized to maximize sun fleck capture on the forest floor. Depending on the season and maturity of the plant, your Monstera could arrive with no holes just yet, and be sized to grow alongside you.',
   ),
   Product(
-    name: 'Leather Work Gloves',
+    name: 'Work Gloves',
     price: 'Rp. 100.000',
     sold: '7',
     image: 'assets/images/product3.png',
